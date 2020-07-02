@@ -31,7 +31,7 @@ function getGreeting() {
     fetch("/data")
         .then(response => response.json())
         .then(val => {
-            const greetingsElement = document.getElementById('my-greeting-container');
+            const greetingsElement = document.getElementById('my-comments-container');
             greetingsElement.innerHTML = '';
             for(var msg of val) {
                 greetingsElement.appendChild(createListElement(msg));

@@ -30,11 +30,13 @@ function addRandomGreeting() {
 function getGreeting() {
     fetch("/data")
         .then(response => response.json())
-        .then(val => {
+        .then(comments => {
             const greetingsElement = document.getElementById('my-comments-container');
             greetingsElement.innerHTML = '';
-            for(var msg of val) {
-                greetingsElement.appendChild(createListElement(msg));
+            for(var comment of comments) {
+                console.log(comment);
+                const d = new Date(comment.timestamp);
+                greetingsElement.appendChild(createListElement("[" + d.toLocaleString() + "]: " + comment.content));
             }
         });
 }

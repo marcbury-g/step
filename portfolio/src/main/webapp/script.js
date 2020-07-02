@@ -29,6 +29,19 @@ function addRandomGreeting() {
 
 function getGreeting() {
     fetch("/data")
-        .then(response => response.text())
-        .then(val => document.getElementById('my-greeting-container').innerHTML = val);
+        .then(response => response.json())
+        .then(val => {
+            const greetingsElement = document.getElementById('my-greeting-container');
+            greetingsElement.innerHTML = '';
+            for(var msg of val) {
+                greetingsElement.appendChild(createListElement(msg));
+            }
+        });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }

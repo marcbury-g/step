@@ -14,10 +14,18 @@
         This is me after merging code into the master branch:
       </p>
       <img src="images/me_after_merging.jpg" width="600">
-      <div id="my-greeting-container"></div>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+    </div>
+    <div id="comments">
+      <h1>Comments</h1>
+     <div id="my-comments-container"></div>
+      <h2>Leave me a comment:</h2>
+        <form action="/data" method="POST">
+      <textarea name="comment-input"></textarea>
+      <input type="submit" />
+    </form>
     </div>
   </body>
 </html>

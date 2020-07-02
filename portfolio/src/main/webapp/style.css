@@ -7,3 +7,20 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+#comments {
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+}
+#my-comments-container li {
+    list-style: none;
+    background-color: lightgrey;
+    border-width: 2;
+}
+
+#my-comments-container li:before {
+  content: "Comment: ";
+  padding-right: 12px;
+  color: blue; /* Or a color you prefer */
+}

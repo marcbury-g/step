@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getGreeting()">
     <div id="content">
       <h1>Marc's Portfolio</h1>
       <p>This is my portfolio.</p>
@@ -14,6 +14,7 @@
         This is me after merging code into the master branch:
       </p>
       <img src="images/me_after_merging.jpg" width="600">
+      <div id="my-greeting-container"></div>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>

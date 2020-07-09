@@ -27,8 +27,14 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function getGreeting() {
-    fetch("/data")
+function getComments() {
+    var user_limit = document.getElementById("comments-limit").value;
+    console.log(user_limit);
+    var commentsLimit = parseInt(user_limit);
+    if(isNaN(commentsLimit)) {
+        commentsLimit = 10;
+    }
+    fetch("/data?limit="+commentsLimit)
         .then(response => response.json())
         .then(comments => {
             const greetingsElement = document.getElementById('my-comments-container');

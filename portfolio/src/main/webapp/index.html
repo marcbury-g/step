@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getGreeting()">
+  <body onload="getComments()">
     <div id="content">
       <h1>Marc's Portfolio</h1>
       <p>This is my portfolio.</p>
@@ -21,6 +21,15 @@
     <div id="comments">
       <h1>Comments</h1>
      <div id="my-comments-container"></div>
+     <p>
+         <label for="comments-limit">Number of comments:</label>
+        <select name="comments-limit" id="comments-limit" onchange="getComments()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+        </select>
+     </p>
       <h2>Leave me a comment:</h2>
         <form action="/data" method="POST">
       <textarea name="comment-input"></textarea>
